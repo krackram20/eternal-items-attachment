@@ -6,7 +6,10 @@
   "description": "Reference app for VTEX IO Services",
   "mustUpdateAt": "2018-01-04",
   "categories": [],
-  "dependencies": {},
+  "dependencies": {
+    "vtex.catalog-graphql": "1.x",
+    "vtex.messages": "1.x"
+  },
   "builders": {
     "node": "6.x",
     "docs": "0.x"
@@ -19,8 +22,31 @@
     {
       "name": "outbound-access",
       "attrs": {
-        "host": "httpstat.us",
-        "path": "*"
+        "host": "portal.vtexcommercestable.com.br",
+        "path": "/checkout/*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "portal.vtexcommercestable.com.br",
+        "path": "/api/*"
+      }
+    },
+    {
+      "name": "AcessaTodosCarrinhos"
+    },
+    {
+      "name": "vtex.catalog-graphql:resolve-graphql"
+    },
+    {
+      "name": "vtex.messages:graphql-save-translation-messages"
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "portal.vtexcommercestable.com.br",
+        "path": "/api/catalog_system/*"
       }
     },
     {
@@ -28,6 +54,9 @@
     },
     {
       "name": "colossus-write-logs"
+    },
+    {
+      "name": "graphql-query"
     }
   ],
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"

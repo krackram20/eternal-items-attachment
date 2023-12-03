@@ -1,4 +1,6 @@
 import { IOClients } from '@vtex/api'
+import { Checkout } from './cart'
+import { MessagesGQL } from './messages'
 
 import Status from './status'
 
@@ -6,5 +8,12 @@ import Status from './status'
 export class Clients extends IOClients {
   public get status() {
     return this.getOrSet('status', Status)
+  }
+  public get checkout() {
+
+    return this.getOrSet('checkout', Checkout)
+  }
+  public get messages() {
+    return this.getOrSet('messages', MessagesGQL)
   }
 }
